@@ -1,0 +1,43 @@
+<!-- input.html -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>曲名を探す！！</title>
+
+    <style>
+        a {
+            color: blueviolet;
+        }
+
+        a:hover {
+            color: rgb(176, 166, 20);
+            transition: .3s
+        }
+
+        form {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>曲名検索</h1>
+    <a href="search.html">←　検索画面に戻る</a>
+
+    <!-- データを飛ばすURL
+     　　method=飛ばし方 -->
+    <form action="search.php" method="post">
+        <input type="title" name="song" />
+        <input type="submit" value="検索" />
+    </form>
+
+
+    <!-- <script>
+        alert('JavaScript Alert');
+    </script> -->
+</body>
+
+</html>
