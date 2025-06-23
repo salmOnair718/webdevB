@@ -1,0 +1,4 @@
+username:mdnuser
+password:erika0707
+ハッシュ：$2y$10$q/IqDRql2GZWMDiI8ItKE.D5vwwRqSVq8Ua9nu7GptJyWxnLjrFpG
+%は不要
