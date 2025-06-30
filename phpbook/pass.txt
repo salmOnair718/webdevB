@@ -2,3 +2,14 @@ username:mdnuser
 password:erika0707
 ハッシュ：$2y$10$q/IqDRql2GZWMDiI8ItKE.D5vwwRqSVq8Ua9nu7GptJyWxnLjrFpG
 %は不要
+
+
+！！！！
+lolipop
+！！！！
+データベース	LAA1605939-sampledb
+ユーザー名　	LAA1605939
+パスワード erika0707
+
+ホスト名	mysql325.phy.lolipop.lan
+データベースバージョン　8.0
