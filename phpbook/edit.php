@@ -6,7 +6,7 @@ $_SESSION['token'] = $token;
 ?>
 <?php
 require_once __DIR__ . '/inc/functions.php';
-require_once __DIR__ . '/login_check.php';
+// require_once __DIR__ . '/login_check.php';
 
 if (empty($_GET['id'])) {
   echo "idを指定してください。";
