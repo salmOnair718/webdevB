@@ -10,10 +10,10 @@
 
     <style>
         body {
-            background-color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 1);
             background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #fff 50%, #fff 100%),
                 /* 線1 */
-                linear-gradient(180deg, #dceff5 1px, transparent 1px);
+                linear-gradient(180deg, #b7ecfbff 1px, transparent 1px);
             /* 線2 */
             background-size: 8px 100%,
                 /* 線1 */
@@ -24,6 +24,7 @@
             margin: 50px auto;
             width: 90%;
         }
+
 
         h1 {
             color: #000;
@@ -46,6 +47,10 @@
             gap: 24px;
             /* padding: 20px; */
             justify-items: center;
+        }
+
+        .post-card {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         /* ✅ hover時に角度を戻す */
@@ -71,11 +76,12 @@
         }
 
         .input-name,
-        .input-comment {
+        .input-comment,
+        .input-tags {
             width: 100%;
             padding: 10px;
             font-size: 14px;
-            border: 1px solid #ccc;
+            border: 1px dashed #333;
             border-radius: 6px;
             box-sizing: border-box;
         }
@@ -84,6 +90,33 @@
             /* resize: vertical; */
             height: 150px;
         }
+
+        .search {
+            width: 60%;
+            margin: 0 auto;
+            /* display: block; */
+            padding: 10px;
+            font-size: 14px;
+            border: 1px dashed #333;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .search_button {
+            padding: 10px 30px;
+            background-color: #333;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .search_button:hover {
+            background-color: #555;
+        }
+
 
         .color-options {
             display: flex;

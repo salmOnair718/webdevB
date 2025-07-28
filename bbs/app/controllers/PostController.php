@@ -34,10 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // ✅ 投稿処理（リアクションでない場合）
+    // ✅ 投稿処理
     $name = trim($_POST['name'] ?? '');
     $comment = trim($_POST['comment'] ?? '');
     $bgColor = trim($_POST['bg_color'] ?? '');
+    $tags = trim($_POST['tags'] ?? '');  // タグの追加
 
     $errors = validate_post($name, $comment);
 
@@ -46,16 +47,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        insert_post($pdo, $name, $comment, $bgColor);
+        insert_post($pdo, $name, $comment, $bgColor, $tags);  // タグ付きで保存
         header('Location: ' . $_SERVER['PHP_SELF']);
         exit;
     }
 }
-$posts = get_all_posts($pdo);
 
+// ✅ タグによる絞り込みがあるか確認
+if (isset($_GET['tag']) && $_GET['tag'] !== '') {
+    $tag = trim($_GET['tag']);
+    $posts = get_posts_by_tag($pdo, $tag);
+} else {
+    $posts = get_all_posts($pdo);
+}
+
+// ✅ 各投稿にリアクション数を追加
 foreach ($posts as &$post) {
     $post['reaction_count'] = get_reactions_by_post($pdo, $post['id']);
 }
 
+// 検索フォーム
+if (isset($_GET['search'])) {
+    $keyword = trim($_GET['search']);
+    $posts = search_posts($pdo, $keyword);
+} else {
+    $posts = get_all_posts($pdo);
+}
+
+// 各投稿にリアクション数を追加
+foreach ($posts as &$post) {
+    $post['reaction_count'] = get_reactions_by_post($pdo, $post['id']);
+}
 
 require __DIR__ . '/../views/layout.php';
