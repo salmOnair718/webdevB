@@ -109,7 +109,6 @@
             font-size: 18px;
             border: none;
             border-radius: 50px;
-            font-weight: bold;
             cursor: pointer;
             transition: background-color 0.2s;
         }

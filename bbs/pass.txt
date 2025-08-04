@@ -4,3 +4,12 @@ password:erika0707
 データベースホスト	mysql325.phy.lolipop.lan
 データベースバージョン	8.0
 ユーザー名	LAA1605939
+
+
+ローカル版
+<?php
+$config = [
+    'dsn' => 'mysql:host=localhost;dbname=bbs_db;charset=utf8mb4',
+    'user' => 'bbs_user',
+    'pass' => 'erika_0707' // 任意パスワードを記述。
+];
